@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title: Index Page</title>
+<script type="text/javascript" charset="utf-8" src="js/formattingOptions2.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/bookmarking.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/iWebkitStyle.css">
+
+</head>
+
+<body onload="startFunctions()">
+
+<!-- Write font and background formatting options buttons on showOptions -->
+<span id="formatContents"></span>
+
+<!-- Write CSS for show/hide for divs -->
+<span id="visible"></span>
+
+<!-- bodyDiv toggles visible, as default on page Load, to show Options button -->
+<div id="bodyDiv">
+<div id="topbar">
+<input type='button' class='buttonOptions' value='Page 1' onclick='toPage1()'>
+<input type='button' class='buttonOptions' value='Bookmarks' onclick='toBookmarks()'>
+<input type='button' class='buttonOptions' value='Notes' onclick='toNotes()'>
+</div>
+<div id="content">
+<div class="clearing"></div>
+
+
+<!-- Body content starts here -->
+
+
+<span class="graytitle">Subhead</span>
+
+<p>
+All the page content will go in here. Click on the button below to clear the entire local storage for testing purposes. 
+</p>
+<input type='button' class='buttonOptions' value='Clear localStorage' onclick='undoAll()'>
+</div> <!-- end content -->
+</div> <!-- end bodyDiv -->
+
+<div id="footer">
+<div id="footerContents"></div>
+</div>
+<script>addFooter();</script>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title: page 1</title>
+<script type="text/javascript" charset="utf-8" src="js/formattingOptions2.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/bookmarking.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/iWebkitStyle.css">
+
+</head>
+
+<body onload="startFunctions()">
+
+<!-- Writes font and background formatting options buttons on showOptions. Initially hidden. See formattingOptions2.js.  -->
+<span id="formatContents"></span>
+
+<!-- Writes CSS for show/hide for divs. Default is everything in "bodyDiv" is visible and "visible" is hidden. See showOptions() and hideOptions() in formattingOptions2.js -->
+<span id="visible"></span>
+
+<!-- bodyDiv toggles visible, as default on page Load, to show Options buttons at top -->
+<div id="bodyDiv">
+<div id="topbar">
+<input type='button' class='buttonOptions' value='Back' onclick='goBack()'>
+<input type='button' class='buttonOptions' value='ABC Options' onclick='showOptions()'>
+<input type='button' class='buttonOptions' value='Add Bookmark' onclick='recordBookmark()'>
+<input type='button' class='buttonOptions' value='Remove BM' onclick='removeBookmark()'>
+</div>
+<div id="content">
+
+<!-- Write CSS styles to page for styling font and background -->
+<span id="changeSize"></span><span id="changeFont"></span><span id="changeBG"></span>
+
+<!-- "clearing" div clears the space on both sides so next div is positioned below. -->
+<div class="clearing"></div>
+
+
+
+<!-- Body content starts here -->
+
+
+
+<span class="graytitle">Subhead</span>
+
+<ul class="pageitem">
+    <li class="textbox"><p>
+This is a note about the page. All the page content will go in here, and the note goes below. Only the < p > tags and textarea on this page will be changed by the text styling buttons.
+    </p></li>
+</ul>
+<textarea class="textareaBox" id='userNote' class='textbox'></textarea>
+<div class="clearing"></div>
+<input type='button' class='buttonFormat' value='Save Note' onclick='recordNote()'>
+<input type='button' class='buttonFormat' value='Remove Note' onClick='removeNote()'>
+
+</div> <!-- end content -->
+</div> <!-- end bodyDiv -->
+
+<div id="footer">
+<div id="footerContents"></div>
+</div>
+<!-- Execute the loading from localStorage of saved font and background CSS styles into spans above, add content into textarea, and add the footer info. -->
+<script>loadData();addFooter();</script>
+</body>
+</html>
+

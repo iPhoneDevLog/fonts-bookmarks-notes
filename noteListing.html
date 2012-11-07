@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Note Listing</title>
+
+<script type="text/javascript" charset="utf-8" src="js/saveNote.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/iWebkitStyle.css">
+
+<script>
+// Display entire localstorage content in console: 
+// from http://www.joelennon.ie/2011/02/11/basics-of-html5-local-storage/
+function peekInside() {
+	for(var i=0, len=localStorage.length; i<len; i++) {
+    	var key = localStorage.key(i);
+    	var value = localStorage[key];
+    	console.log("*KEY:* " + key + " ==> *VALUE:* " + value);
+    }
+}
+
+/* Uses regex to show only notes on this page, not bookmarks. 
+*/
+function showAllNotes() {
+	for(var i=0, len=localStorage.length; i<len; i++) {
+    	var key = localStorage.key(i);
+    	var value = localStorage[key];
+    	if( !/html$/i.test( value ) ) {
+    		document.getElementById('allNotes').innerHTML += "<a href='" + key + "'><input type='button' class='buttonListings' value='Visit'></a><br>&nbsp;" + value + " <br><br><hr> "
+    	}
+    } 
+} 
+
+/* when page loads, show all the localStorage content in console and show all notes on this page. */
+function onLoadNotes() {
+peekInside(); showAllNotes();
+}
+
+
+/* This will clear browser's entire localStorage of all previous sessions (will delete all notes and bookmarks). Implement it when developing. */
+function undoAll() {
+localStorage.clear(); refresh(); 
+}
+
+/*  refreshes page to show updated content after "undo all" button is pressed. */
+function refresh() {
+var thisPage = window.location.href;
+window.location.href=thisPage;
+} 
+
+function goBack()
+  {
+  window.history.back();
+  }
+  
+/* load up innerHTML first with content (with no HTML markup), then export that content to email so it doesn't show HTML markup. Can't use showAllNotes above because HTML markup will transfer to email as well. */
+function exporting() {
+	for(var i=0, len=localStorage.length; i<len; i++) {
+    	var key = localStorage.key(i);
+    	var value = localStorage[key];
+    	if( !/html$/i.test( value ) ) {
+    		document.getElementById('prepNotes').innerHTML += value + escape("\n") + "------------" + escape("\n");
+    	} 
+    }
+var exportNotes = document.getElementById('prepNotes').innerHTML;
+var eml="";
+var subj= "?subject=My Notes";
+var bod = "&body=" + exportNotes;
+location.href="mailto:"+eml+subj+bod;
+}
+
+</script>
+</head>
+
+<body>
+<div id="bodyDiv">
+<div id="topbar">
+<input type='button' class='buttonOptions' value='Back' onclick='goBack()'>
+</div>
+<div id="content" style="margin:1em">
+<h3>
+Listing of All Notes
+</h3>
+<!-- Display all notes here -->
+<div id="allNotes"></div>
+</div>
+<p><input type="button" class='buttonUndo' value="Export" onclick="exporting()"></p>
+
+<!-- Load notes into here without HTML markup, then into email -->
+<div id="prepNotes" style="display:none"></div>
+</div>
+
+<script>
+if(typeof onLoadNotes == 'function') { 
+    onLoadNotes(); 
+}
+</script>
+</body>
+</html>
+

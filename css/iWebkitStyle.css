@@ -1,0 +1,67 @@
+/* iWebKit css 5.04 by Christopher Plieger. Heavily edited! */ body{position:relative;margin:0;-webkit-text-size-adjust:none;min-height:416px;font-family:helvetica,sans-serif;-webkit-background-size:0.438em 100%;background:#CFDDee; -webkit-touch-callout:none}.center{margin:auto;display:block;text-align:center!important}img{border:0}a:hover .arrow{background-position:0 -13px!important}@media screen and (max-width:320px){#topbar, #footer{height:44px}
+
+#leftnav a,#rightnav a,#leftbutton a,#rightbutton a,#blueleftbutton a,#bluerightbutton a{line-height:30px;height:30px}#leftnav img,#rightnav img{margin-top:4px}#leftnav,#leftbutton,#blueleftbutton{top:7px}#rightnav,#rightbutton,#bluerightbutton{top:7px}.musiclist .name{max-width:55%}.textbox textarea{width:280px}.bigfield input{width:295px}}@media screen and (min-width:321px){#topbar{height:32px}#title{line-height:32px;height:32px;font-size:13pt}
+.textbox textarea{width:440px}
+#topbar.black{background:-webkit-gradient(linear,0% 0%,0% 100%,from(#858585),color-stop(3%,#636363),color-stop(50%,#202020),color-stop(51%,black),color-stop(97%,black),to(#262626))}#topbar.transparent{background:-webkit-gradient(linear,0% 0%,0% 100%,from(rgba(133,133,133,0.7)),color-stop(3%,rgba(99,99,99,0.7)),color-stop(50%,rgba(32,32,32,0.7)),color-stop(51%,rgba(0,0,0,0.7)),color-stop(97%,rgba(0,0,0,0.7)),to(rgba(38,38,38,0.7)))}#topbar{position:relative;left:0;top:0;width:auto;background:-webkit-gradient(linear,0% 0%,0% 100%,from(#cdd5df),color-stop(3%,#b0bccd),color-stop(50%,#889bb3),color-stop(51%,#8195af),color-stop(97%,#6d84a2),to(#2d3642));margin-bottom:13px}#title{position:absolute;font-weight:bold;top:0;left:0;right:0;padding:0 10px;text-align:center;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:#FFF;text-shadow:rgba(0,0,0,0.6) 0 -1px 0}
+
+li {list-style-type:none;margin-left:-1.5em;}
+
+#content{width:100%;position:relative;min-height:250px;margin-top:10px;height:auto;z-index:0;overflow:hidden}
+
+
+#footer{text-align:center;position:relative;margin:20px 0;height:30px;width:auto;bottom:10px}
+.ipodlist #footer,.ipodlist #footer a{text-shadow:#FFF 0 -1px 0}
+
+#footer a,#footer{text-decoration:none;font-size:10pt;color:#000;text-shadow:#FFF 0 1px 0}
+.graytitle{position:relative;font-weight:bold;font-size:17px;right:20px;left:9px;color:#4C4C4C;text-shadow:#FFF 0 1px 0;padding:1px 0 3px 8px}
+
+div.clearing {clear:both;padding:.5em 0;}
+
+input[type="button"] {
+font-family:Helvetica, Arial, sans-serif; font-size:13px;
+text-align:left;margin:0;padding:1em;float:left;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding:0;margin:0;
+height:32px;
+text-align:center;
+}
+
+.textareaBox {color: #fff;
+clear:both;margin:.5em .6em;
+background-color:#F7F2E0;background-image: none; color:#000; padding: .4em; line-height: 1.4; font-size: 16px; display: block; width: 90%; -webkit-border-radius:8px; border-color: #999;
+}
+
+/* buttons at tops of pages. 25% because there are four buttons across.  */
+.buttonOptions { color: #fff; text-shadow:#000 0 -1px 0;
+width: 25%; background:-webkit-gradient(linear,0% 0%,0% 100%,from(#cdd5df),color-stop(3%,#b0bccd),color-stop(50%,#889bb3),color-stop(51%,#8195af),color-stop(97%,#6d84a2),to(#2d3642));
+}
+
+/* buttons on options page and below textarea */
+.buttonFormat { color: #fff; text-shadow:#000 0 -1px 0; font-weight:normal;
+width:50%; float:left;
+background:-webkit-gradient(linear,0% 0%,0% 100%,from(#fff),color-stop(3%,#cccccc),color-stop(50%,#aaaaaa),color-stop(51%,#aaaaaa),color-stop(97%,#777777),to(#444444));
+}
+.buttonUndo { color: #000; text-shadow:#fff 0 -1px 0;font-weight:bold;
+width:100%; float:left;background:-webkit-gradient(linear,0% 0%,0% 100%,from(#ffff00),color-stop(3%,#fff380),color-stop(50%,#fbb917),color-stop(51%,#d4a017),color-stop(97%,#af7a17),to(#af7a17));
+}
+
+.buttonDone { color: #000; text-shadow:#fff 0 -1px 0;
+width:100%; float:left;color:white;clear:both;font-weight:bold;
+background:-webkit-gradient(linear,0% 0%,0% 100%,from(#afdcec),color-stop(3%,#92c7c7),color-stop(50%,#78c7c7),color-stop(51%,#3b9c9c),color-stop(97%,#307d7e),to(#307d7e));
+}
+
+/* Visit buttons in listings */
+.buttonListings { color: #fff; text-shadow:#000 0 -1px 0; padding 0 1em;
+float:left; width:5em;
+background:-webkit-gradient(linear,0% 0%,0% 100%,from(#cdd5df),color-stop(3%,#b0bccd),color-stop(50%,#889bb3),color-stop(51%,#8195af),color-stop(97%,#6d84a2),to(#2d3642));
+}
+
+h3{line-height:1em;padding-top:1em;clear:both;font-family:Helvetica, Arial, sans-serif; color: #666;font-size:16px;}
+
+#formatDiv { 
+visibility:hidden; margin:1em;
+}
+
+#content {margin:1em;width:95%;}

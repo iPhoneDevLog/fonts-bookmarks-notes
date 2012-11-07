@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bookmark Listing</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/iWebkitStyle.css">
+
+<script>
+function showBookmark() {
+var bookmark = localStorage.getItem( document.title );
+}
+
+// Display entire localstorage content in console: 
+// from http://www.joelennon.ie/2011/02/11/basics-of-html5-local-storage/
+function peekInside() {
+for(var i=0, len=localStorage.length; i<len; i++) {
+    var key = localStorage.key(i);
+    var value = localStorage[key];
+    console.log(key + " => " + value);
+    }
+}
+
+/* Bookmark's key/value is the page title and page location. 
+"&nbsp;" adds a space between the button and the text following. */
+function showAllBookmarks() {
+for(var i=0, len=localStorage.length; i<len; i++) {
+    var key = localStorage.key(i);
+    var value = localStorage[key];
+    if( /html$/i.test( value ) ) {
+    document.getElementById('allBookmarks').innerHTML += '&nbsp;' + key + "<a href='" + value + "'><input type='button' class='buttonListings' value='Visit'></a><br><br><br> "}
+    } 
+} 
+
+// when page loads, show all localstorage content in console, and show all bookmarks
+function onLoadBookmarks() {
+peekInside(); showAllBookmarks();
+}
+
+
+/* This will clear browser's entire localStorage of all previous sessions */
+function undoAll() {
+localStorage.clear(); refresh(); 
+}
+
+function refresh() {
+var thisPage = window.location.href;
+window.location.href=thisPage;
+} 
+
+function goBack()
+  {
+  window.history.back();
+  }
+</script>
+</head>
+
+<body>
+<div id="bodyDiv">
+<div id="topbar">
+<input type='button' class='buttonOptions' value='Back' onclick='goBack()'>
+</div>
+<div id="content" style="margin:1em">
+<h3 style="clear:both; padding:.5em;">
+Listing of All Bookmarks
+</h3>
+
+<!-- Display all notes here -->
+<div id="allBookmarks"></div>
+</div></div>
+<script>
+if(typeof onLoadBookmarks == 'function') { 
+    onLoadBookmarks(); 
+}
+</script>
+</body>
+</html>
+
